@@ -1,0 +1,22 @@
+﻿@model Post
+
+@{
+
+
+}
+
+@*
+    <h2>@Model.Title</h2>
+
+    <p>@Model.Body</p>
+*@
+<div class="container">
+    <div class="post no-shadow">
+        @if(!String.IsNullOrEmpty(Model.Image))
+        @*<img src="image_path"/>*@
+        <span class="title">@Model.Title</span>
+    </div>
+    <div class="post-body">
+        @Model.Body
+    </div>
+</div>

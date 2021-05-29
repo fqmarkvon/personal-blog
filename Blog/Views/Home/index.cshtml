@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Post>
+
+@{
+
+
+}
+@*
+<h2>Home page</h2>
+<img src="~/static/video-game-maplestory-2-wallpaper-preview (1).jpg" width="500px"/>
+*@
+<div class="main-img">
+    <span class="title">Qian Feng personal Blog</span>
+</div>
+<div class="container">
+    @*<ul>
+            @foreach(var post in Model)
+            {
+            <li>
+                <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+                    @post.Title
+                </a>
+                -
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@post.Id">
+                    Edit
+                </a>
+                -
+                <a asp-controller="Home" asp-action="Remove" asp-route-id="@post.Id">
+                    Remove
+                </a>
+            </li>
+            }
+        </ul>*@
+    @foreach (var post in Model)
+    {
+        var image_path = $"/Image/{post.Image}";
+        <a class="post"asp-action="Post" asp-route-id="@post.Id">
+            <img src="@image_path"/>
+            <span class="title">
+                @post.Title
+            </span>
+        </a>
+    }
+</div>
